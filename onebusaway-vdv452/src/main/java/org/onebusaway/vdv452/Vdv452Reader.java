@@ -18,6 +18,7 @@ package org.onebusaway.vdv452;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -111,7 +112,7 @@ public class Vdv452Reader extends CsvEntityReader {
   @Override
   public void readEntities(Class<?> entityClass, InputStream is)
       throws IOException, CsvEntityIOException {
-    readEntities(entityClass, new InputStreamReader(is, "ISO-8859-1"));
+    readEntities(entityClass, new InputStreamReader(is, StandardCharsets.UTF_8));
   }
 
   @Override
